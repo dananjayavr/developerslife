@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import feedparser
-import os
+import os,sys
 
 d = feedparser.parse('http://feeds.feedburner.com/ThisDevelopersLife')
 print d['feed']['title']
@@ -19,8 +19,10 @@ for entry in d['entries']:
 	i += 1
 	
 print 'Press the corrsponding number to listen to the podcast.'
-pod_choice = raw_input()
-
-print 'You chose,', links_list[int(pod_choice)]
-choice = str(links_list[int(pod_choice)])
-os.system('vlc %s' % choice)
+print 'OR Enter to Quit.'
+try:
+	pod_choice = raw_input()
+	choice = str(links_list[int(pod_choice)])
+	os.system('vlc %s' % choice)
+except ValueError:
+	sys.exit(0)
