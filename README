@@ -1,9 +1,9 @@
 This is a short Python script I wrote to listen to the awesome developer's life podcasts
 at, http://thisdeveloperslife.com/
 
-This program will parse the RSS feed of thie website and list all the available episodes
+This program will parse the RSS feed of that website and list all the available episodes
 in the command prompt. Then it will invoke the VLC media player to play the files while 
-simultaneosly streaming them.
+simultaneously streaming them.
 
 If you don't have VLC Player installed, you can alter the source code to add any media
 player of your choice.
@@ -12,4 +12,4 @@ Just run this program,
 
 $ python developerslife.py
 
-like that and from then on, everything will be self-explainatory.
+like that and from then on, everything will be self-explanatory.
