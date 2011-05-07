@@ -3,7 +3,20 @@
 import feedparser
 import os,sys
 
-d = feedparser.parse('http://feeds.feedburner.com/ThisDevelopersLife')
+print 'd - Developes\' Life Podcast'
+print 'h - Hanselman Minutes Podcast'
+print 'q - Quit'
+
+pod_select = raw_input()
+d = ''
+if pod_select == 'd':
+	d = feedparser.parse('http://feeds.feedburner.com/ThisDevelopersLife')
+if pod_select == 'h':
+	d = feedparser.parse('http://feeds.feedburner.com/HanselminutesCompleteMP3')
+if pod_select == 'q':
+	sys.exit(0)
+	
+
 print d['feed']['title']
 print d.feed.subtitle
 print d.channel.description
@@ -15,7 +28,7 @@ links_list = []
 i = 0
 for entry in d['entries']:
 	links_list.append(d['entries'][i].links[1].href)
-	print i,')', d['entries'][i]['title'], ' => ', d['entries'][i].links[1].href
+	print i,')', d['entries'][i]['title'], '\n', d['entries'][i].links[1].href
 	i += 1
 	
 print 'Press the corrsponding number to listen to the podcast.'
